@@ -536,6 +536,10 @@ This flag is _only_ relevant when generating a game list (by leaving out the `-s
 
 Only relevant when generating an EmulationStation, a Retrobat or a Pegasus game list, with the `-f` option. Emulationstation is the default frontend when the `-f` option is left out. The `relative` flag forces the rom and any media paths (if they are the same as the input folder) inside the game list to be relative to the rom input folder. Consider setting this in [`config.ini`](CONFIGINI.md#relativepaths) instead.
 
+#### searchbasename
+
+Use basename for filename searches. (Removes file extensions from name queries)
+
 #### skipexistingcovers
 
 When generating gamelists, skip processing covers that already exist in the media output folder.

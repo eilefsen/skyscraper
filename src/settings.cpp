@@ -423,6 +423,10 @@ void RuntimeCfg::applyConfigIni(CfgType type, QSettings *settings,
                 config->relativePaths = v;
                 continue;
             }
+			if (k == "searchBaseName") {
+                config->searchBaseName = v;
+                continue;
+            }
             if (k == "skipped") {
                 config->skipped = v;
                 continue;
@@ -701,6 +705,8 @@ void RuntimeCfg::setFlag(const QString flag) {
         config->pretend = true;
     } else if (flag == "relative") {
         config->relativePaths = true;
+	} else if (flag == "searchbasename") {
+        config->searchBaseName = true;
     } else if (flag == "skipexistingcovers") {
         config->skipExistingCovers = true;
     } else if (flag == "skipexistingmanuals") {

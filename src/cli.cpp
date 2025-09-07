@@ -413,6 +413,8 @@ QMap<QString, QString> Cli::getSubCommandOpts(const QString subCmd) {
              "cached resources."},
             {"relative",
              "Forces all gamelist paths to be relative to rom location."},
+            {"searchbasename", "Use basename for filename searches. "
+             "(Removes file extensions from name queries)."},
             {"skipexistingcovers",
              "When generating gamelists, skip processing covers that already "
              "exist in the media output folder."},
