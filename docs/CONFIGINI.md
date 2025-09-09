@@ -116,7 +116,7 @@ This is an alphabetical index of all configuration options their usage level and
 | [regionPrios](CONFIGINI.md#regionprios)                     | Expert         |    Y     |       Y        |                |               |
 | [relativePaths](CONFIGINI.md#relativepaths)                 | Basic          |    Y     |       Y        |                |               |
 | [scummIni](CONFIGINI.md#scummini)                           | Advanced       |    Y     |                |                |               |
-| [searchBaseName](CONFIGINI.md#searchBaseName)  | Advanced       |    Y     |       Y        |               |               |
+| [searchbasename](CONFIGINI.md#searchBaseName)               | Advanced       |    Y     |       Y        |                |               |
 | [skipped](CONFIGINI.md#skipped)                             | Advanced       |    Y     |       Y        |       Y        |               |
 | [spaceCheck](CONFIGINI.md#spacecheck)                       | Basic          |    Y     |                |                |               |
 | [startAt](CONFIGINI.md#startat)                             | Advanced       |          |       Y        |       Y        |               |
