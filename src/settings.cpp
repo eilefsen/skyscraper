@@ -308,6 +308,10 @@ void RuntimeCfg::applyConfigIni(CfgType type, QSettings *settings,
                 config->scummIni = v;
                 continue;
             }
+			if (k == "searchBaseName") {
+                config->searchBaseName = parseExtensions(v);
+                continue;
+            }
             if (k == "startAt") {
                 config->startAt = v;
                 continue;
@@ -421,10 +425,6 @@ void RuntimeCfg::applyConfigIni(CfgType type, QSettings *settings,
             }
             if (k == "relativePaths") {
                 config->relativePaths = v;
-                continue;
-            }
-			if (k == "searchBaseName") {
-                config->searchBaseName = v;
                 continue;
             }
             if (k == "skipped") {
@@ -618,6 +618,16 @@ void RuntimeCfg::applyCli(bool &inputFolderSet, bool &gameListFolderSet,
     if (parser->isSet("addext")) {
         config->addExtensions = parseExtensions(parser->value("addext"));
     }
+	if (parser->isSet("searchbasename")) {
+		QString v = parser->value("searchbasename");
+		if (!v.isEmpty()) {
+			config->searchBaseName = parseExtensions(v);
+		} else {
+			config->searchBaseName = Platform::get().getFormats(
+				config->platform, config->extensions, config->addExtensions
+			).remove('*');
+		}
+    }
     if (parser->isSet("refresh")) {
         config->refresh = true;
     }
@@ -705,8 +715,6 @@ void RuntimeCfg::setFlag(const QString flag) {
         config->pretend = true;
     } else if (flag == "relative") {
         config->relativePaths = true;
-	} else if (flag == "searchbasename") {
-        config->searchBaseName = true;
     } else if (flag == "skipexistingcovers") {
         config->skipExistingCovers = true;
     } else if (flag == "skipexistingmanuals") {
