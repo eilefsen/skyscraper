@@ -573,10 +573,7 @@ QList<QString> ScreenScraper::getSearchNames(const QFileInfo &info,
 
     QString romnom = hashList.at(0);
 	if (!config->searchBaseName.isEmpty()) {
-		QStringList exts = Platform::get().getFormats(
-			config->platform, config->extensions, config->addExtensions
-		).remove('*').split(" ");
-		for (const auto &e : exts) {
+		for (const auto &e : config->searchBaseName.remove('*').split(' ')) {
 			if (romnom.contains(e)) {
 				romnom = QString(romnom).remove(e);
 				break;
