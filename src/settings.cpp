@@ -618,15 +618,20 @@ void RuntimeCfg::applyCli(bool &inputFolderSet, bool &gameListFolderSet,
     if (parser->isSet("addext")) {
         config->addExtensions = parseExtensions(parser->value("addext"));
     }
-	if (parser->isSet("searchbasename")) {
-		QString v = parser->value("searchbasename");
-		if (!v.isEmpty()) {
-			config->searchBaseName = parseExtensions(v);
-		} else {
-			config->searchBaseName = Platform::get().getFormats(
-				config->platform, config->extensions, config->addExtensions
-			).remove('*');
-		}
+    if (parser->isSet("searchbasename")) {
+        if (parser->isSet("searchbasename-all")) {
+            puts("Cannot use both --searchbasename and --searchbasename-all "
+                 "at the same time, please use only one at a time. Exiting...");
+            exit(1);
+        }
+        config->searchBaseName =
+            parseExtensions(parser->value("searchbasename"));
+    }
+    if (parser->isSet("searchbasename-all")) {
+        config->searchBaseName =
+            Platform::get()
+                .getFormats(config->platform, config->extensions,
+                            config->addExtensions).remove('*');
     }
     if (parser->isSet("refresh")) {
         config->refresh = true;

@@ -158,9 +158,11 @@ void Cli::createParser(QCommandLineParser *parser, QString platforms) {
         "EXTENSION(S)", "");
     QCommandLineOption searchbasenameOption(
         "searchbasename",
-        "Removes file extensions from name queries. If no extensions are "
-        "specified use all extensions from configuration.",
+        "Removes file extensions from screenscraper name queries.",
         "EXTENSION(S)", "");
+	QCommandLineOption searchbasenameallOption(
+        "searchbasename-all",
+        "Removes all platform file extensions from name queries.");
     QCommandLineOption flagsOption(
         "flags",
         "Allows setting flags that will impact the run in various ways. See "
@@ -272,6 +274,7 @@ void Cli::createParser(QCommandLineParser *parser, QString platforms) {
     parser->addOption(refreshOption);
     parser->addOption(regionOption);
     parser->addOption(searchbasenameOption);
+    parser->addOption(searchbasenameallOption);
     parser->addOption(sOption);
     parser->addOption(startatOption);
     parser->addOption(tOption);
