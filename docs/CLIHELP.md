@@ -230,6 +230,22 @@ Skyscraper -p snes -s thegamesdb --addext '*.ext1 *.ext2'
 Skyscraper -p snes -s thegamesdb --addext '.ext1 ext2'
 ```
 
+#### searchbasename &lt;EXTENSION&gt;
+
+Removes file extensions from screenscraper name queries.
+
+!!! note
+
+     Only applies to screenscraper queries.
+
+#### searchbasename-all
+
+Removes all platform file extensions from screenscraper name queries.
+
+!!! note
+
+     Only applies to screenscraper queries.
+
 ### --cache <COMMAND[:OPTIONS]>
 
 This is the cache master option. It contains several subcommands that allows you to manipulate the cached data for the selected platform.
@@ -535,10 +551,6 @@ This flag is _only_ relevant when generating a game list (by leaving out the `-s
 #### relative
 
 Only relevant when generating an EmulationStation, a Retrobat or a Pegasus game list, with the `-f` option. Emulationstation is the default frontend when the `-f` option is left out. The `relative` flag forces the rom and any media paths (if they are the same as the input folder) inside the game list to be relative to the rom input folder. Consider setting this in [`config.ini`](CONFIGINI.md#relativepaths) instead.
-
-#### searchbasename
-
-Use basename for filename searches. (Removes file extensions from name queries)
 
 #### skipexistingcovers
 

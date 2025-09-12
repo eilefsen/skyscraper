@@ -689,9 +689,9 @@ Enable this option to use the basename of the file when searching by title.
 
 !!! note
 
-	Currently only applies to screenscraper.
+     Only applies to screenscraper queries.
 
-Default value: `false`  
+Default value: unset
 Allowed in sections: `[main]`, `[<PLATFORM>]`
 
 ---
