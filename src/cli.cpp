@@ -156,11 +156,11 @@ void Cli::createParser(QCommandLineParser *parser, QString platforms) {
         "Add this or these file extension(s) to accepted file extensions "
         "during a scraping run. (ex.: '*.zst *.ext', also valid: '.zst ext')",
         "EXTENSION(S)", "");
-	QCommandLineOption searchbasenameOption(
-		"searchbasename",
-		"Removes file extensions from name queries. If no extensions are "
-		"specified use all extensions from configuration.",
-		"EXTENSION(S)", "");
+    QCommandLineOption searchbasenameOption(
+        "searchbasename",
+        "Removes file extensions from name queries. If no extensions are "
+        "specified use all extensions from configuration.",
+        "EXTENSION(S)", "");
     QCommandLineOption flagsOption(
         "flags",
         "Allows setting flags that will impact the run in various ways. See "

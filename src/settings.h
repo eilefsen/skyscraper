@@ -90,7 +90,7 @@ struct Settings {
     bool unattendSkip = false;
     bool interactive = false;
     bool forceFilename = false;
-	QString searchBaseName = "";
+    QString searchBaseName = "";
     bool stats = false;
     bool hints = true;
     int verbosity = 0;

@@ -570,21 +570,19 @@ QList<QString> ScreenScraper::getSearchNames(const QFileInfo &info,
     hashList.append(md5Result.toUpper());
     hashList.append(sha1Result.toUpper());
 
-
     QString romnom = hashList.at(0);
-	if (!config->searchBaseName.isEmpty()) {
-		for (const auto &e : config->searchBaseName.remove('*').split(' ')) {
-			if (romnom.contains(e)) {
-				romnom = QString(romnom).remove(e);
-				break;
-			}
-		}
-	}
+    if (!config->searchBaseName.isEmpty()) {
+        for (const auto &e : config->searchBaseName.remove('*').split(' ')) {
+            if (romnom.contains(e)) {
+                romnom = QString(romnom).remove(e);
+                break;
+            }
+        }
+    }
     // Only one searchName, but direct match query
     if (info.size() != 0) {
         searchNames.append("crc=" + hashList.at(1) + "&md5=" + hashList.at(2) +
-                           "&sha1=" + hashList.at(3) +
-                           "&romnom=" + romnom +
+                           "&sha1=" + hashList.at(3) + "&romnom=" + romnom +
                            "&romtaille=" + QString::number(info.size()));
     } else {
         searchNames.append("romnom=" + romnom);

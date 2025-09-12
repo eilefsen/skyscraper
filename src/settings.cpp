@@ -308,7 +308,7 @@ void RuntimeCfg::applyConfigIni(CfgType type, QSettings *settings,
                 config->scummIni = v;
                 continue;
             }
-			if (k == "searchBaseName") {
+            if (k == "searchBaseName") {
                 config->searchBaseName = parseExtensions(v);
                 continue;
             }
